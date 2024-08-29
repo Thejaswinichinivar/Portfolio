@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thejaswini C.R.'s portfolio website. Web developer with expertise in front-end and back-end development. Explore my skills, projects, and contact me.">
+    <title>Thejaswini C.R. - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Monaco&family=Poppins:wght@400;600&family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@300;500&display=swap" as="style">
+    <meta property="og:title" content="Thejaswini C.R.'s Portfolio" />
+<meta property="og:description" content="Welcome to Thejaswini C.R.'s personal portfolio, showcasing web development skills and projects." />
+<meta property="og:image" content="Thejaswini.jpg" />
+<meta property="og:url" content="https://yourwebsite.com" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preload" href="Thejaswini.jpg" as="image">
+<link rel="preload" href="style.css" as="style">
+
+
+    <style>
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f0f0;
+            color: black;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            animation: slideInRight 1s ease-in-out;
+        }
+
+        @keyframes slideInRight {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        header {
+            background-color: #2C3E50;
+            padding: 10px 0;
+            position: sticky;
+            font-size: 15px;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            margin: 0;
+            padding: 0 20px;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            font-family: 'Roboto', sans-serif;
+            text-decoration: none;
+            font-size: 1rem;
+            color: #e0e0e0;
+            background-color: #2C3E50;
+            border-radius: 50px;
+            padding: 10px 20px;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            background-color: #1abc9c;
+            color: #fff;
+            transform: scale(1.05);
+        }
+
+        section {
+            padding: 60px 20px;
+            background-color: #e0f7fa;
+            text-align: center;
+        }
+
+        #home {
+            padding: 60px 20px 20px 20px; 
+            text-align: center;
+            background-color: #e0f7fa;
+            flex-grow: 1;
+        }
+        
+        .glow-on-hover {
+            display: inline-block;
+            width: 200px;
+            height: 50px;
+            background: #2C3E50;
+            color: #FFF;
+            text-align: center;
+            line-height: 50px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 3px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: 0px 1px 2px rgba(0, 0, 0, .2);
+            transition: all 0.3s ease;
+        }
+
+        .glow-on-hover:before {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 100%;
+            background: white;
+            left: -250px;
+            transition: all 0.3s ease;
+            z-index: 1;
+        }
+
+        .glow-on-hover .btnText {
+            position: relative;
+            z-index: 2;
+            transition: margin-left 0.5s ease;
+        }
+
+        .glow-on-hover:hover .btnText {
+            margin-left: 50px;
+        }
+
+        .glow-on-hover:hover:before {
+            margin-left: -130px;
+        }
+
+        .glow-on-hover:active {
+            box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.3);
+        }
+      
+        
+       
+        #home h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #2C3E50;
+            font-family: 'Lucida Handwriting', Cursive;
+        }
+
+        #home p {
+            font-size: 1.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        #home img {
+            max-width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .about-me {
+            background-color: #ffffff;
+            padding: 20px 20px 40px 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+      .about-me h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #2C3E50;
+            font-family: 'Monaco', monospace;
+        }
+
+        .about-me p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #666;
+        }
+
+       
+
+        @media (max-width: 768px) {
+            .about-me {
+                padding: 30px 15px;
+            }
+
+            .about-me h2 {
+                font-size: 1.8rem;
+            }
+
+            .about-me p {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #home div {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            #home img {
+                margin: 20px 0;
+                max-width: 100%;
+                height: auto;
+                border-radius: 50%;
+            }
+        }
+
+        .about-me {
+            background-color: #ffffff;
+            padding: 40px 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        #skills {
+            background-color: #e0f7fa;
+        }
+
+        #skills h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #1F2F46;
+            font-family: 'Lucida Handwriting', Cursive;
+        }
+
+        .skills-container {
+            display: flex;
+            justify-content: flex-start; 
+            overflow-x: auto; 
+            padding-bottom: 20px;
+            animation: none; 
+        }
+        .skills-container:hover {
+            animation-play-state: running; 
+        }
+        
+        
+
+        .skill-item {
+            text-align: center;
+            color: #555;
+            flex: 0 0 auto;
+            width: 100px;
+            margin-right: 20px;
+        }
+
+        .skill-icon {
+            font-size: 2rem;
+            padding: 8px;
+            background-color: #2C3E50;
+            color: #fff;
+            text-align: center;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            margin: 0 auto 10px;
+        }
+
+        .skill-item:hover .skill-icon {
+            background-color: #1abc9c;
+            transform: scale(1.05);
+        }
+
+        .skill-name {
+            font-size: 1rem;
+            color: #333;
+            line-height: 1.2;
+        }
+
+        #projects {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: #e0f7fa;
+            flex-grow: 1;
+        }
+
+        #projects h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #1F2F46;
+            font-family: 'Lucida Handwriting', Cursive;
+        }
+
+        .projects-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .project {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 45%;
+            margin-bottom: 20px;
+        }
+
+        .project img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .project h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #1F2F46;
+            font-family: 'Lucida Handwriting', Cursive;
+        }
+
+        .project p {
+            margin-bottom: 15px;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .project a {
+            font-family: 'Roboto', sans-serif;
+            text-decoration: none;
+            background-color: #1abc9c;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .project a:hover {
+            background-color: #16a085;
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .project {
+                width: 100%;
+            }
+        }
+
+        #about-me myself{
+            align-items:flex-start ;
+            text-align: left;
+            
+
+        }
+
+        .image {
+            width: 300px;
+            height: 450px;
+            border-radius: 20px;
+            overflow: hidden;
+            transform: translateX(-210px); 
+        }
+        
+        .image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+  
+          
+
+          
+        #contact {
+            background-color: #1F2F46;
+            padding: 60px 20px;
+            text-align: center;
+            color: white;
+            flex-grow: 1;
+        }
+
+        #contact h1 {
+            font-family: 'Lucida Handwriting', cursive;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .social-links a {
+            font-size: 36px;
+            color: white;
+            margin: 0 20px;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #1abc9c;
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        @keyframes scrollSkills {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .skills-container:hover {
+            animation-play-state: paused;
+        }
+
+        .location {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .location a {
+            font-size: 36px;
+            color: white;
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        .location a:hover {
+            color: #1abc9c;
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .location p {
+            font-size: 0.5rem;
+            color: white;
+            margin: 5px 0 0;
+            text-align: center;
+        }
+
+        #contactForm {
+            max-width: 700px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #contactForm div {
+            margin-bottom: 15px;
+        }
+
+        #contactForm label {
+            display: block;
+            margin-bottom: 5px;
+            color: #1F2F46;
+        }
+
+        #contactForm input,
+        #contactForm textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        #contactForm button {
+            background-color: #1abc9c;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        #contactForm button:hover {
+            background-color: #16a085;
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: #1F2F46;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-top: auto;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        
+        footer p {
+            font-size: 1rem;
+            margin: 0;
+            color: #fff;
+        }
+
+        .myself {
+            text-align: left; 
+            list-style-type: disc; 
+            padding-left: 20px;
+            font-size: 1.2rem; 
+            color: #333; 
+        }
+        
+        .myself li {
+            margin-bottom: 10px; 
+        }
+        
+        .highlight-line {
+            font-size: 1.5rem;
+            line-height: 2.4;
+            font-weight: italic;
+            font-family: 'Lucida Handwriting', Cursive;
+        }
+
+        .apostrophe {
+            font-size: 2.4rem;
+            line-height: 2.4;
+            font-weight: italic;
+            font-family: 'Lucida Handwriting', Cursive;
+        }
+
+        
+        /* Media Queries */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            #home h1 {
+                font-size: 2rem;
+            }
+
+            #home img {
+                max-width: 250px;
+                height: 250px;
+            }
+
+            .about-me h2 {
+                font-size: 1.8rem;
+            }
+
+            .about-me p {
+                font-size: 1rem;
+            }
+        }
+        @media (max-width: 768px) {
+            #home {
+                padding: 30px 10px;
+            }
+
+            #skills,
+            #projects,
+            #contact {
+                padding: 30px 10px;
+            }
+
+            .skills-section,
+            .project,
+            #contactForm {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header role="banner">
+        <nav role="navigation">
+            <ul>
+                <li><a href="#home" class="active" aria-label="Go to Home section">Home</a></li>
+                <li><a href="#about-me" aria-label="Go to About section">About</a></li>
+                <li><a href="#skills" aria-label="Go to Skill section">Skills</a></li>
+                <li><a href="#projects" aria-label="Go to Project section">Projects</a></li>
+                <li><a href="#contact" aria-label="Go to Contact section">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    
+    <!-- Home Section -->
+    <section id="home">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center;">
+            <div style="flex: 1; max-width: 50%; padding-right: 20px;">
+                <div class='font'>
+                    <h1>Hello, <br> I'm Thejaswini C.R.</h1>
+                </div>
+                <br><br><br>
+                <p>Here is my Resume.Click on it.....</p>
+                <a href="resume.pdf" class="glow-on-hover">
+                    <i class="fa-solid fa-arrow-down-to-line fa-bounce"><span class="btnText">Resume</span></i>
+                </a>
+            </div>
+            <div class="image">
+                <img src="Thejaswini.jpg" alt="Portrait illustration of Thejaswini C.R., web developer">
+              </div>
+              
+              
+        </div>
+        <br>
+        <br>
+       
+    </section>
+    <section id="about-me">
+
+            <div class="about-me" id="about-me">
+                <h2>About Me</h2>
+                <p>
+                    I’m an aspiring web developer with expertise in front-end and back-end development. My focus is on creating visually appealing, functional, and user-friendly applications. With experience in both design and development, I strive to bring ideas to life through code.
+                </p>
+                <br>
+           
+                <ul class="myself">
+                    <li>I graduated from Bapuji Institute of Engineering and Technology, Davangere, Karnataka.</li>
+                    <li>Interested in Coding, Painting, Badminton.</li>
+                </ul>
+            </div>
+        </section>
+        
+       
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h1>My Skills</h1>
+        <div class="skills-container">
+            <div class="skill-item">
+                <i class="fas fa-code skill-icon"></i>
+                <p class="skill-name">Data Structures<br>& Algorithms</p>
+            </div>
+            <div class="skill-item">
+                <i class="fa-solid fa-database skill-icon"></i>
+                <p class="skill-name">SQL<br>Database</p>
+            </div>
+            <div class="skill-item">
+                <i class="fa-solid fa-robot skill-icon"></i>
+                <p class="skill-name">AI<br>& ML</p>
+            </div>
+            <div class="skill-item">
+                <i class="fa-brands fa-google skill-icon"></i>
+                <p class="skill-name">Generative<br>AI</p>
+            </div>
+            <div class="skill-item">
+                <i class="fab fa-python skill-icon"></i>
+                <p class="skill-name">Python</p>
+            </div>
+            <div class="skill-item">
+                <i class="fab fa-html5 skill-icon"></i>
+                <p class="skill-name">HTML<br>/CSS</p>
+            </div>
+            <div class="skill-item">
+                <i class="fab fa-js skill-icon"></i>
+                <p class="skill-name">JavaScript</p>
+            </div>
+            <div class="skill-item">
+                <i class="fa-brands fa-react skill-icon"></i>
+                <p class="skill-name">React-JS</p>
+            </div>
+            <div class="skill-item">
+                <i class="fa-solid fa-gears skill-icon"></i>
+                <p class="skill-name">Postman<br>API</p>
+            </div>
+            <div class="skill-item">
+                <i class="fab fa-python skill-icon"></i>
+                <p class="skill-name">Django</p>
+            </div>
+            <div class="skill-item">
+                <i class="fas fa-file-code skill-icon"></i>
+                <p class="skill-name">C<br>Programming</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="projects-container">
+            <div class="project">
+                <img src="login authentication.png" alt="Robust Login Authentication System">
+                <h3>Project 1: Robust Login Authentication System</h3>
+                <p>This project is a simple yet effective login authentication system developed using HTML, CSS, JavaScript, and Java. It includes features such as password hashing and session management.</p>
+                <a href="https://github.com/Thejaswinichinivar/OIBSIP/blob/main/Task%204.zip" class="btn">View Project</a>
+            </div>
+            <div class="project">
+                <img src="Complaint reg.png" alt="Online Complaint Registration System">
+                <h3>Project 2: Online Complaint Registration System</h3>
+                <p>This project introduces an innovative Online Registration System addressing online nuisance and inappropriate behavior, using PHP and MySQL for backend management.</p>
+                <a href="https://github.com/Thejaswinichinivar/Online-Complaint" class="btn">View Project</a>
+            </div>
+            <div class="project">
+                <img src="Hostel manage.png" alt="Hostel Management System">
+                <h3>Project 3: Hostel Management System</h3>
+                <p>The Hostel Management System is a comprehensive web-based application designed for efficient hostel facility management, developed using Python and Django.</p>
+                <a href="https://github.com/Thejaswinichinivar/Hostel-Management-System" class="btn">View Project</a>
+            </div>
+            <div class="project">
+                <img src="Human.jpg" alt="Human Activity Recognition System">
+                <h3>Project 4: Human Activity Recognition System</h3>
+                <p>This project involves developing a human activity recognition system using a pre-trained deep learning model (ResNet-34) and OpenCV.</p>
+                <a href="https://github.com/Thejaswinichinivar/Human-Activity-Recognition-System-" class="btn">View Project</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h1>Get in touch with me</h1>
+        <div class="social-links">
+            <a href="https://wa.me/9844042543" target="_blank" title="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://github.com/Thejaswinichinivar" target="_blank" title="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="mailto:thejaswinicr09@gmail.com?subject=Contact%20via%20Portfolio&body=Hello%20Thejaswini,%0D%0A%0D%0AI'm%20reaching%20out%20to%20you%20from%20your%20portfolio%20website.%0D%0A%0D%0ABest%20Regards," title="Email">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/thejaswini-c-r-982578228/" target="_blank" title="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </div>
+        <div class="location">
+            <a title="Location">
+                <i class="fas fa-map-marker-alt"></i>
+            </a>
+            <p>DCM Township,<br> Davangere, <br>Karnataka</p>
+        </div>
+    </section>
+
+    <footer>
+        <p class="highlight-line">
+            <span class="apostrophe">"</span>Write it. Run it. Fix it<span class="apostrophe">"</span>
+        </p>
+        <p>&copy; 2024 Thejaswini C.R. | All Rights Reserved</p>
+    </footer>
+
+    <script>
+      
+
+                window.addEventListener('scroll', function () {
+                    const sections = document.querySelectorAll('section');
+                    const navLinks = document.querySelectorAll('nav ul li a');
+                
+                    let currentSection = '';
+                    sections.forEach(section => {
+                        const sectionTop = section.offsetTop - 100; // Adjusting offset for better accuracy
+                        const sectionHeight = section.offsetHeight;
+                        
+                        if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+                            currentSection = section.getAttribute('id');
+                        }
+                    });
+                
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href').includes(currentSection)) {
+                            link.classList.add('active');
+                        }
+                    });
+                });
+                
+        
+
+        // Automatic scrolling and hover stop functionality for skills
+        const skillsContainer = document.querySelector('.skills-container');
+
+        skillsContainer.addEventListener('mouseover', () => {
+            skillsContainer.style.animationPlayState = 'paused';
+        });
+
+        skillsContainer.addEventListener('mouseout', () => {
+            skillsContainer.style.animationPlayState = 'running';
+        });
+    </script>
+</body>
+
+</html>
